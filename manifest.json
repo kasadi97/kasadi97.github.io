@@ -16,8 +16,8 @@
   "related_applications": [
     {
       "platform": "play",
-      "url": "https://play.google.com/store/apps/details?id=kz.cardadvisor.pwa",
-      "id": "kz.cardadvisor.pwa"
+      "url": "https://play.google.com/store/apps/details?id=io.github.kasadi97.twa",
+      "id": "io.github.kasadi97.twa"
     },
     {
       "platform": "webapp",
@@ -87,7 +87,7 @@
     "navigation_bar_divider_color": "#F8F9FA",
     "background_color": "#FFFFFF",
     "host": "kasadi97.github.io",
-    "packageName": "kz.cardadvisor.pwa"
+    "packageName": "io.github.kasadi97.twa"
   },
   "widgets": [
     {

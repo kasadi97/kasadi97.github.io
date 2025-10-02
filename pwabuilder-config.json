@@ -8,7 +8,7 @@
   "theme_color": "#3B82F6",
   "orientation": "portrait-primary",
   "android": {
-    "packageId": "kz.cardadvisor.pwa",
+    "packageId": "io.github.kasadi97.twa",
     "appVersion": "1.2.0",
     "appVersionCode": 120,
     "minSdkVersion": 24,
