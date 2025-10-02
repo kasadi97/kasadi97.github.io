@@ -1,0 +1,47 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 768'>
+  <rect width='1024' height='768' fill='#FFFFFF'/>
+  <!-- Header -->
+  <rect x='0' y='0' width='1024' height='100' fill='#FFFFFF' stroke='#F8F9FA'/>
+  <text x='512' y='45' font-size='32' text-anchor='middle' font-family='Arial' fill='#3B82F6' font-weight='bold'>💳 Card Advisor KZ</text>
+  <text x='512' y='75' font-size='18' text-anchor='middle' font-family='Arial' fill='#6C757D'>Лучшие банковские карты Казахстана</text>
+  
+  <!-- Language switcher -->
+  <rect x='880' y='25' width='120' height='35' rx='17' fill='#F8F9FA'/>
+  <text x='940' y='45' font-size='14' text-anchor='middle' font-family='Arial' fill='#3B82F6' font-weight='bold'>RU KZ EN</text>
+  
+  <!-- Stats -->
+  <rect x='50' y='130' width='924' height='80' rx='12' fill='#F8F9FA'/>
+  <text x='512' y='165' font-size='20' text-anchor='middle' font-family='Arial' fill='#212529'>У вас зарегистрировано: 3 карты</text>
+  <rect x='450' y='180' width='124' height='30' rx='8' fill='#6C757D'/>
+  <text x='512' y='198' font-size='14' text-anchor='middle' font-family='Arial' fill='#FFFFFF'>Управлять картами</text>
+  
+  <!-- Categories grid -->
+  <rect x='70' y='240' width='200' height='160' rx='12' fill='#FFFFFF' stroke='#E9ECEF'/>
+  <text x='170' y='290' font-size='48' text-anchor='middle'>🛒</text>
+  <text x='170' y='330' font-size='18' text-anchor='middle' font-family='Arial' fill='#212529' font-weight='600'>Продукты и супермаркеты</text>
+  <text x='170' y='355' font-size='14' text-anchor='middle' font-family='Arial' fill='#6C757D'>8 карт</text>
+  
+  <rect x='290' y='240' width='200' height='160' rx='12' fill='#FFFFFF' stroke='#E9ECEF'/>
+  <text x='390' y='290' font-size='48' text-anchor='middle'>⛽</text>
+  <text x='390' y='330' font-size='18' text-anchor='middle' font-family='Arial' fill='#212529' font-weight='600'>АЗС и топливо</text>
+  <text x='390' y='355' font-size='14' text-anchor='middle' font-family='Arial' fill='#6C757D'>6 карт</text>
+  
+  <rect x='510' y='240' width='200' height='160' rx='12' fill='#FFFFFF' stroke='#E9ECEF'/>
+  <text x='610' y='290' font-size='48' text-anchor='middle'>🍽️</text>
+  <text x='610' y='330' font-size='18' text-anchor='middle' font-family='Arial' fill='#212529' font-weight='600'>Кафе и рестораны</text>
+  <text x='610' y='355' font-size='14' text-anchor='middle' font-family='Arial' fill='#6C757D'>7 карт</text>
+  
+  <rect x='730' y='240' width='200' height='160' rx='12' fill='#FFFFFF' stroke='#E9ECEF'/>
+  <text x='830' y='290' font-size='48' text-anchor='middle'>🚕</text>
+  <text x='830' y='330' font-size='18' text-anchor='middle' font-family='Arial' fill='#212529' font-weight='600'>Такси и транспорт</text>
+  <text x='830' y='355' font-size='14' text-anchor='middle' font-family='Arial' fill='#6C757D'>5 карт</text>
+  
+  <!-- Referral banner -->
+  <rect x='70' y='450' width='884' height='120' rx='12' fill='#FF6B35'/>
+  <rect x='90' y='470' width='60' height='60' rx='10' fill='#FFFFFF'/>
+  <text x='120' y='505' font-size='24' text-anchor='middle' font-family='Arial' fill='#FF6B35' font-weight='bold'>F</text>
+  <text x='400' y='490' font-size='24' text-anchor='middle' font-family='Arial' fill='#FFFFFF' font-weight='bold'>Получите карту Freedom Bank</text>
+  <text x='400' y='520' font-size='16' text-anchor='middle' font-family='Arial' fill='#FFFFFF'>🎁 1000₸ бонуса при регистрации 💰 От 1500₸ дополнительных бонусов</text>
+  <rect x='750' y='480' width='120' height='40' rx='8' fill='#FFFFFF'/>
+  <text x='810' y='505' font-size='14' text-anchor='middle' font-family='Arial' fill='#FF6B35' font-weight='bold'>Получить карту</text>
+</svg>
