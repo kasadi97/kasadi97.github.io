@@ -1,95 +1,175 @@
-const CACHE_NAME = 'card-advisor-v2';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/css/styles.css',
-  '/js/app.js',
-  '/js/data.js',
-  '/js/storage.js',
-  '/js/translations.js',
-  '/manifest.json',
-  '/icon.svg',
-  '/icons/icon-32x32.png',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png',
-  '/icons/screenshot-narrow.svg',
-  '/icons/screenshot-wide.svg',
-  '/icons/freedom-l.png'
+const CACHE_NAME = 'card-advisor-v3';
+const STATIC_CACHE_NAME = 'card-advisor-static-v3';
+const DYNAMIC_CACHE_NAME = 'card-advisor-dynamic-v3';
+
+// Static assets to cache on install
+const STATIC_ASSETS = [
+  '/card-advisor-kz-pwa/',
+  '/card-advisor-kz-pwa/index.html',
+  '/card-advisor-kz-pwa/css/styles.css',
+  '/card-advisor-kz-pwa/js/app.js',
+  '/card-advisor-kz-pwa/js/data.js',
+  '/card-advisor-kz-pwa/js/storage.js',
+  '/card-advisor-kz-pwa/js/translations.js',
+  '/card-advisor-kz-pwa/manifest.json',
+  '/card-advisor-kz-pwa/icon.svg',
+  '/card-advisor-kz-pwa/icons/icon-32x32.png',
+  '/card-advisor-kz-pwa/icons/icon-192x192.png',
+  '/card-advisor-kz-pwa/icons/icon-512x512.png',
+  '/card-advisor-kz-pwa/icons/screenshot-narrow.svg',
+  '/card-advisor-kz-pwa/icons/screenshot-wide.svg',
+  '/card-advisor-kz-pwa/adaptive-card.json',
+  '/card-advisor-kz-pwa/widget-data.json'
 ];
+
+// Offline fallback page
+const OFFLINE_PAGE = '/card-advisor-kz-pwa/index.html';
 
 // Установка Service Worker
 self.addEventListener('install', function(event) {
-  console.log('[SW] Installing Service Worker');
+  console.log('[SW] Installing Service Worker v3');
   event.waitUntil(
-    caches.open(CACHE_NAME)
+    caches.open(STATIC_CACHE_NAME)
       .then(function(cache) {
-        console.log('[SW] Caching app shell');
-        return cache.addAll(urlsToCache);
+        console.log('[SW] Caching static assets');
+        return cache.addAll(STATIC_ASSETS);
       })
       .then(function() {
-        console.log('[SW] Service Worker installed successfully');
+        console.log('[SW] All static assets cached successfully');
         return self.skipWaiting();
+      })
+      .catch(function(error) {
+        console.error('[SW] Failed to cache static assets:', error);
       })
   );
 });
 
 // Активация Service Worker
 self.addEventListener('activate', function(event) {
-  console.log('[SW] Activating Service Worker');
+  console.log('[SW] Activating Service Worker v3');
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.map(function(cacheName) {
-          if (cacheName !== CACHE_NAME) {
+          // Delete old caches
+          if (cacheName !== STATIC_CACHE_NAME && cacheName !== DYNAMIC_CACHE_NAME) {
             console.log('[SW] Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
     }).then(function() {
-      console.log('[SW] Service Worker activated');
+      console.log('[SW] Service Worker activated and old caches cleaned');
       return self.clients.claim();
     })
   );
 });
 
-// Обработка запросов (Cache First Strategy)
+// Enhanced fetch handler with network-first for API, cache-first for assets
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        // Возвращаем кэшированную версию если она есть
-        if (response) {
-          console.log('[SW] Serving from cache:', event.request.url);
-          return response;
-        }
-        
-        console.log('[SW] Fetching from network:', event.request.url);
-        return fetch(event.request).then(function(response) {
-          // Проверяем, что получили валидный ответ
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
+  const { request } = event;
+  const url = new URL(request.url);
 
-          // Клонируем ответ для кэширования
-          var responseToCache = response.clone();
+  // Skip non-GET requests
+  if (request.method !== 'GET') {
+    return;
+  }
 
-          caches.open(CACHE_NAME)
-            .then(function(cache) {
-              cache.put(event.request, responseToCache);
-            });
-
-          return response;
-        }).catch(function() {
-          // Если сеть недоступна, возвращаем офлайн страницу
-          if (event.request.destination === 'document') {
-            return caches.match('/index.html');
-          }
-        });
-      }
-    )
-  );
+  // Handle different types of requests
+  if (request.destination === 'document') {
+    // HTML pages: Cache-first with network fallback
+    event.respondWith(handlePageRequest(request));
+  } else if (request.destination === 'image' || 
+             request.destination === 'script' || 
+             request.destination === 'style' ||
+             request.destination === 'font') {
+    // Static assets: Cache-first
+    event.respondWith(handleAssetRequest(request));
+  } else {
+    // API calls and other requests: Network-first
+    event.respondWith(handleApiRequest(request));
+  }
 });
+
+// Handle page requests (HTML)
+async function handlePageRequest(request) {
+  try {
+    // Try cache first
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      console.log('[SW] Serving page from cache:', request.url);
+      return cachedResponse;
+    }
+
+    // Try network
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE_NAME);
+      cache.put(request, networkResponse.clone());
+      return networkResponse;
+    }
+  } catch (error) {
+    console.log('[SW] Network failed for page request:', error);
+  }
+
+  // Fallback to offline page
+  const offlineResponse = await caches.match(OFFLINE_PAGE);
+  return offlineResponse || new Response('Offline', { status: 503 });
+}
+
+// Handle static asset requests
+async function handleAssetRequest(request) {
+  try {
+    // Try cache first
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      console.log('[SW] Serving asset from cache:', request.url);
+      return cachedResponse;
+    }
+
+    // Try network and cache
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(STATIC_CACHE_NAME);
+      cache.put(request, networkResponse.clone());
+      return networkResponse;
+    }
+  } catch (error) {
+    console.log('[SW] Network failed for asset request:', error);
+  }
+
+  // Return empty response for failed assets
+  return new Response('', { status: 404 });
+}
+
+// Handle API requests
+async function handleApiRequest(request) {
+  try {
+    // Try network first
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      // Cache successful API responses
+      const cache = await caches.open(DYNAMIC_CACHE_NAME);
+      cache.put(request, networkResponse.clone());
+      return networkResponse;
+    }
+  } catch (error) {
+    console.log('[SW] Network failed for API request:', error);
+  }
+
+  // Fallback to cache
+  const cachedResponse = await caches.match(request);
+  if (cachedResponse) {
+    console.log('[SW] Serving API response from cache:', request.url);
+    return cachedResponse;
+  }
+
+  // Return offline indicator
+  return new Response(JSON.stringify({ offline: true, error: 'Network unavailable' }), {
+    status: 503,
+    headers: { 'Content-Type': 'application/json' }
+  });
+}
 
 // Background Sync для offline функциональности
 self.addEventListener('sync', function(event) {

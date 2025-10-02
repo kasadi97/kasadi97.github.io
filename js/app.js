@@ -51,6 +51,9 @@ class App {
     // Инициализируем переводы
     TranslationService.init();
     
+    // Setup offline functionality
+    this.setupOfflineSupport();
+    
     // Показываем красивую загрузку
     this.showLoading();
     
@@ -66,6 +69,53 @@ class App {
     
     // Добавляем welcome анимацию
     this.playWelcomeAnimation();
+  }
+
+  setupOfflineSupport() {
+    // Listen for online/offline events
+    window.addEventListener('online', () => {
+      this.updateOnlineStatus(true);
+    });
+
+    window.addEventListener('offline', () => {
+      this.updateOnlineStatus(false);
+    });
+
+    // Check initial status
+    this.updateOnlineStatus(navigator.onLine);
+  }
+
+  updateOnlineStatus(isOnline) {
+    const offlineIndicator = document.getElementById('offline-indicator');
+    
+    if (!isOnline) {
+      if (!offlineIndicator) {
+        const indicator = document.createElement('div');
+        indicator.id = 'offline-indicator';
+        indicator.innerHTML = `
+          <div style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #f59e0b;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 14px;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          ">
+            📱 Offline Mode - Using cached data
+          </div>
+        `;
+        document.body.appendChild(indicator);
+      }
+    } else {
+      if (offlineIndicator) {
+        offlineIndicator.remove();
+      }
+    }
   }
 
   loadHomeBanner() {
