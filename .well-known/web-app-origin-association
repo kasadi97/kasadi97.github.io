@@ -1,5 +1,7 @@
 {
-  "web_app_origins": [
-    "https://kasadi97.github.io"
+  "web_apps": [
+    {
+      "web_app_identity": "https://kasadi97.github.io/card-advisor-kz-pwa/"
+    }
   ]
 }

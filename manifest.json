@@ -26,10 +26,10 @@
   ],
   "scope_extensions": [
     {
-      "type": "origin",
       "origin": "https://kasadi97.github.io"
     }
   ],
+  "handle_links": "preferred",
   "launch_handler": {
     "client_mode": "focus-existing"
   },
