@@ -11,18 +11,36 @@
   "scope": "https://kasadi97.github.io/card-advisor-kz-pwa/",
   "lang": "ru",
   "dir": "ltr",
-  "prefer_related_applications": false,
+  "prefer_related_applications": true,
   "display_override": ["tabbed", "window-controls-overlay", "minimal-ui"],
   "related_applications": [
     {
       "platform": "play",
       "url": "https://play.google.com/store/apps/details?id=kz.cardadvisor.pwa",
       "id": "kz.cardadvisor.pwa"
+    },
+    {
+      "platform": "webapp",
+      "url": "https://kasadi97.github.io/card-advisor-kz-pwa/"
     }
   ],
   "scope_extensions": [
-    {"origin": "https://kasadi97.github.io"},
-    {"origin": "https://freedombank.onelink.me"}
+    {
+      "origin": "https://kasadi97.github.io",
+      "has_origin_wildcard": false
+    },
+    {
+      "origin": "https://freedombank.onelink.me",
+      "has_origin_wildcard": false
+    },
+    {
+      "origin": "https://halykbank.kz",
+      "has_origin_wildcard": false
+    },
+    {
+      "origin": "https://kaspibank.kz",
+      "has_origin_wildcard": false
+    }
   ],
   "launch_handler": {
     "client_mode": "focus-existing"
@@ -40,34 +58,72 @@
     {
       "action": "https://kasadi97.github.io/card-advisor-kz-pwa/open-csv",
       "accept": {
-        "text/csv": [".csv"]
-      }
+        "text/csv": [".csv"],
+        "application/json": [".json"]
+      },
+      "icons": [
+        {
+          "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+cardadvisor",
+      "url": "https://kasadi97.github.io/card-advisor-kz-pwa/?action=%s"
     }
   ],
   "edge_side_panel": {
     "preferred_width": 400
   },
+  "widgets": [
+    {
+      "name": "Мои карты",
+      "description": "Быстрый доступ к вашим банковским картам",
+      "tag": "my-cards",
+      "template": "my-cards-template",
+      "ms_ac_template": "adaptive-card.json",
+      "data": "widget-data.json",
+      "type": "text/plain",
+      "screenshots": [
+        {
+          "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/screenshot-narrow.svg",
+          "sizes": "390x844",
+          "label": "Виджет моих карт"
+        }
+      ],
+      "icons": [
+        {
+          "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
   "icons": [
     {
-      "src": "icons/icon-32x32.png",
+      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-32x32.png",
       "sizes": "32x32",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icons/icon-192x192.png",
+      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icons/icon-512x512.png",
+      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-512x512.png",
       "sizes": "512x512", 
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icons/icon-512x512.png",
+      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png", 
       "purpose": "maskable"
@@ -83,7 +139,7 @@
       "url": "https://kasadi97.github.io/card-advisor-kz-pwa/?screen=cards",
       "icons": [
         {
-          "src": "icons/icon-192x192.png",
+          "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
@@ -96,7 +152,7 @@
       "url": "https://kasadi97.github.io/card-advisor-kz-pwa/?category=groceries",
       "icons": [
         {
-          "src": "icons/icon-192x192.png", 
+          "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-192x192.png", 
           "sizes": "192x192",
           "type": "image/png"
         }
@@ -105,14 +161,14 @@
   ],
   "screenshots": [
     {
-      "src": "icons/screenshot-narrow.svg",
+      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/screenshot-narrow.svg",
       "sizes": "390x844",
       "type": "image/svg+xml",
       "form_factor": "narrow",
       "label": "Главная страница с категориями банковских карт"
     },
     {
-      "src": "icons/screenshot-wide.svg", 
+      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/screenshot-wide.svg", 
       "sizes": "1024x768",
       "type": "image/svg+xml",
       "form_factor": "wide",

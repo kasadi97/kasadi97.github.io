@@ -1,0 +1,41 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.3",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "💳 Card Advisor KZ",
+          "weight": "Bolder",
+          "size": "Medium",
+          "color": "Accent"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Мои карты: ${cards_count}",
+          "spacing": "Small"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Кэшбэк: ${total_cashback}",
+          "spacing": "Small"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Лучшая категория: ${best_category}",
+          "spacing": "Small"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "Открыть приложение",
+      "url": "https://kasadi97.github.io/card-advisor-kz-pwa/"
+    }
+  ]
+}

@@ -114,5 +114,7 @@ Icon?
 tools/
 *.bat
 *.py
+!adaptive-card.json
+!widget-data.json
 *.md
 !README.md
