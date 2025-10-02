@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Advisor - Лучшие банковские карты</title>
+    
+    <!-- PWA Meta -->
+    <meta name="theme-color" content="#3498db">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Card Advisor">
+    
+    <!-- Icons -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="app-title">💳 Card Advisor KZ</h1>
+                <p class="app-subtitle">Лучшие банковские карты Казахстана</p>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="ru" onclick="app.switchLanguage('ru')">RU</button>
+                <button class="lang-btn" data-lang="kz" onclick="app.switchLanguage('kz')">KZ</button>
+                <button class="lang-btn" data-lang="en" onclick="app.switchLanguage('en')">EN</button>
+            </div>
+        </header>
+
+        <!-- User Stats -->
+        <div class="stats-container">
+            <p class="stats-text">У вас зарегистрировано: <span id="cards-count">0</span> карт</p>
+            <button class="btn btn-secondary" onclick="showMyCards()">Управлять картами</button>
+        </div>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <!-- Home Screen -->
+            <div id="home-screen" class="screen active">
+                <div class="categories-grid" id="categories-grid">
+                    <!-- Categories will be loaded here -->
+                </div>
+                <div id="home-banner">
+                    <!-- Referral banner will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Category Detail Screen -->
+            <div id="category-screen" class="screen">
+                <div class="screen-header">
+                    <button class="btn btn-back" onclick="showHome()">← Назад</button>
+                    <div class="category-header">
+                        <div class="category-icon" id="category-icon">🛒</div>
+                        <h2 class="category-title" id="category-title">Категория</h2>
+                    </div>
+                </div>
+                <div class="content" id="category-content">
+                    <!-- Category details will be loaded here -->
+                </div>
+            </div>
+
+            <!-- My Cards Screen -->
+            <div id="cards-screen" class="screen">
+                <div class="screen-header">
+                    <button class="btn btn-back" onclick="showHome()">← Назад</button>
+                    <h2>Мои карты</h2>
+                </div>
+                <div class="content">
+                    <div class="stats-container">
+                        <p class="stats-text">Зарегистрировано карт: <span id="cards-count-detail">0</span></p>
+                        <button class="btn btn-primary" onclick="showAddCardModal()">+ Добавить карту</button>
+                    </div>
+                    
+                    <div id="user-cards-list" class="cards-list">
+                        <!-- User cards will be loaded here -->
+                    </div>
+                    
+                    <div id="empty-cards" class="empty-state" style="display: none;">
+                        <div class="empty-icon">💳</div>
+                        <h3>У вас пока нет карт</h3>
+                        <p>Добавьте свои банковские карты, чтобы получать персональные рекомендации</p>
+                    </div>
+                    
+                    <div id="my-cards-banner">
+                        <!-- Referral banner will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Add Card Modal -->
+        <div id="add-card-modal" class="modal">
+            <div class="modal-content">
+                <h3>Добавить карту</h3>
+                <select id="bank-select" style="width: 100%; padding: 15px; border: 1px solid #F8F9FA; border-radius: 8px; font-size: 16px; margin-bottom: 20px; transition: all 0.2s ease; color: #212529;">
+                    <option value="">Выберите банк</option>
+                </select>
+                <input type="text" id="card-name" placeholder="Название карты (например, СберКарта)" style="display: none;">
+                <div class="modal-buttons">
+                    <button class="btn btn-secondary" onclick="hideAddCardModal()">Отмена</button>
+                    <button class="btn btn-primary" onclick="addCard()">Добавить</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Загружаем данные...</p>
+        </div>
+    </div>
+
+    <script src="js/translations.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
