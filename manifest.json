@@ -3,12 +3,12 @@
   "name": "Card Advisor KZ - Лучшие банковские карты Казахстана",
   "short_name": "Card Advisor KZ",
   "description": "PWA приложение для выбора лучших банковских карт по категориям трат. 75+ карт от 9 банков Казахстана с персональными рекомендациями.",
-  "start_url": "/",
+  "start_url": "https://kasadi97.github.io/card-advisor-kz-pwa/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#3B82F6",
   "orientation": "portrait-primary",
-  "scope": "/",
+  "scope": "https://kasadi97.github.io/card-advisor-kz-pwa/",
   "lang": "ru",
   "dir": "ltr",
   "prefer_related_applications": false,
@@ -28,7 +28,7 @@
     "client_mode": "focus-existing"
   },
   "share_target": {
-    "action": "/share-target/",
+    "action": "https://kasadi97.github.io/card-advisor-kz-pwa/share-target/",
     "method": "POST",
     "params": {
       "title": "title",
@@ -38,7 +38,7 @@
   },
   "file_handlers": [
     {
-      "action": "/open-csv",
+      "action": "https://kasadi97.github.io/card-advisor-kz-pwa/open-csv",
       "accept": {
         "text/csv": [".csv"]
       }
@@ -80,7 +80,7 @@
       "name": "Мои карты",
       "short_name": "Карты",
       "description": "Управление вашими банковскими картами",
-      "url": "/?screen=cards",
+      "url": "https://kasadi97.github.io/card-advisor-kz-pwa/?screen=cards",
       "icons": [
         {
           "src": "icons/icon-192x192.png",
@@ -93,7 +93,7 @@
       "name": "Лучшие карты",
       "short_name": "Топ карты",
       "description": "Просмотр лучших предложений",
-      "url": "/?category=groceries",
+      "url": "https://kasadi97.github.io/card-advisor-kz-pwa/?category=groceries",
       "icons": [
         {
           "src": "icons/icon-192x192.png", 
