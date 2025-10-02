@@ -492,11 +492,9 @@ class DataService {
   static getBestUserCard(category, userCards) {
     if (!userCards?.length || !category?.cards?.length) return null;
 
+    // Ищем карты пользователя по банку (не по конкретному названию карты)
     const availableUserCards = category.cards.filter(categoryCard => 
-      userCards.some(userCard => 
-        userCard.bankName === categoryCard.bankName && 
-        userCard.cardName === categoryCard.cardName
-      )
+      userCards.some(userCard => userCard.bankName === categoryCard.bankName)
     );
 
     if (!availableUserCards.length) return null;

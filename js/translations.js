@@ -61,7 +61,8 @@ const TRANSLATIONS = {
     cardAdded: "Карта добавлена!",
     cardDeleted: "Карта удалена",
     selectBankFirst: "Выберите банк",
-    confirmDelete: "Вы уверены, что хотите удалить эту карту?"
+    confirmDelete: "Вы уверены, что хотите удалить эту карту?",
+    cardAlreadyExists: "Такая карта уже добавлена"
   },
   
   kz: {
@@ -125,7 +126,8 @@ const TRANSLATIONS = {
     cardAdded: "Карта қосылды!",
     cardDeleted: "Карта жойылды",
     selectBankFirst: "Банкті таңдаңыз",
-    confirmDelete: "Осы картаны жойғыңыз келе ме?"
+    confirmDelete: "Осы картаны жойғыңыз келе ме?",
+    cardAlreadyExists: "Мұндай карта қосылған"
   },
   
   en: {
@@ -189,7 +191,8 @@ const TRANSLATIONS = {
     cardAdded: "Card added!",
     cardDeleted: "Card deleted",
     selectBankFirst: "Select bank first",
-    confirmDelete: "Are you sure you want to delete this card?"
+    confirmDelete: "Are you sure you want to delete this card?",
+    cardAlreadyExists: "This card is already added"
   }
 };
 

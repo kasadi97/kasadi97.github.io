@@ -264,20 +264,31 @@ class App {
     const cardName = document.getElementById('card-name').value.trim() || 'Основная карта';
 
     if (!bankName) {
-      this.showError('Выберите банк');
+      this.showError(TranslationService.translate('selectBankFirst'));
       return;
     }
 
     const newCard = { bankName, cardName };
     
-    if (StorageService.addUserCard(newCard)) {
+    const result = StorageService.addUserCard(newCard);
+    if (result) {
       this.loadUserCards();
       this.renderMyCards();
       this.updateCardsCount();
       this.hideAddCardModal();
-      this.showSuccess('Карта добавлена');
+      this.showSuccess(TranslationService.translate('cardAdded'));
     } else {
-      this.showError('Не удалось добавить карту');
+      // Проверяем, не дубликат ли это
+      const existingCards = StorageService.getUserCards();
+      const isDuplicate = existingCards.some(card => 
+        card.bankName === newCard.bankName && card.cardName === newCard.cardName
+      );
+      
+      if (isDuplicate) {
+        this.showError(TranslationService.translate('cardAlreadyExists'));
+      } else {
+        this.showError('Не удалось добавить карту');
+      }
     }
   }
 

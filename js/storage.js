@@ -25,6 +25,16 @@ class StorageService {
   static addUserCard(newCard) {
     try {
       const existingCards = this.getUserCards();
+      
+      // Проверяем, не существует ли уже такая карта
+      const isDuplicate = existingCards.some(card => 
+        card.bankName === newCard.bankName && card.cardName === newCard.cardName
+      );
+      
+      if (isDuplicate) {
+        return false; // Карта уже существует
+      }
+      
       const cardWithId = {
         ...newCard,
         id: Date.now().toString()
