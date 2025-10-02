@@ -2,20 +2,44 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Advisor - Лучшие банковские карты</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Card Advisor KZ - Лучшие банковские карты Казахстана</title>
+    <meta name="description" content="Card Advisor KZ - PWA приложение для выбора лучших банковских карт Казахстана. 75+ карт от 9 банков с персональными рекомендациями и анализом кэшбэка.">
+    <meta name="keywords" content="банковские карты, казахстан, кэшбэк, kaspi, halyk, сбербанк, forte, freedom bank">
+    <meta name="author" content="Card Advisor KZ">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Card Advisor KZ - Лучшие банковские карты Казахстана">
+    <meta property="og:description" content="PWA приложение для выбора лучших банковских карт с персональными рекомендациями">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kasadi97.github.io/card-advisor-kz-pwa/">
+    <meta property="og:image" content="https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-512x512.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Card Advisor KZ">
+    <meta name="twitter:description" content="Лучшие банковские карты Казахстана">
+    <meta name="twitter:image" content="https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-512x512.png">
     
     <!-- PWA Meta -->
-    <meta name="theme-color" content="#3498db">
+    <meta name="theme-color" content="#3B82F6">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Card Advisor">
+    <meta name="apple-mobile-web-app-title" content="Card Advisor KZ">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Card Advisor KZ">
     
     <!-- Icons -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+    <link rel="icon" href="icons/icon-32x32.png" sizes="32x32">
+    <link rel="icon" href="icons/icon-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
     
     <!-- Manifest -->
     <link rel="manifest" href="manifest.json">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/app.js" as="script">
     
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
@@ -37,8 +61,8 @@
 
         <!-- User Stats -->
         <div class="stats-container">
-            <p class="stats-text">У вас зарегистрировано: <span id="cards-count">0</span> карт</p>
-            <button class="btn btn-secondary" onclick="showMyCards()">Управлять картами</button>
+            <p class="stats-text" id="stats-text">У вас зарегистрировано: <span id="cards-count">0</span> карт</p>
+            <button class="btn btn-secondary" id="manage-cards-btn" onclick="showMyCards()">Управлять картами</button>
         </div>
 
         <!-- Main Content -->
@@ -56,7 +80,7 @@
             <!-- Category Detail Screen -->
             <div id="category-screen" class="screen">
                 <div class="screen-header">
-                    <button class="btn btn-back" onclick="showHome()">← Назад</button>
+                    <button class="btn btn-back" id="back-btn-category" onclick="showHome()">← Назад</button>
                     <div class="category-header">
                         <div class="category-icon" id="category-icon">🛒</div>
                         <h2 class="category-title" id="category-title">Категория</h2>
@@ -70,13 +94,13 @@
             <!-- My Cards Screen -->
             <div id="cards-screen" class="screen">
                 <div class="screen-header">
-                    <button class="btn btn-back" onclick="showHome()">← Назад</button>
-                    <h2>Мои карты</h2>
+                    <button class="btn btn-back" id="back-btn-cards" onclick="showHome()">← Назад</button>
+                    <h2 id="my-cards-title">Мои карты</h2>
                 </div>
                 <div class="content">
                     <div class="stats-container">
-                        <p class="stats-text">Зарегистрировано карт: <span id="cards-count-detail">0</span></p>
-                        <button class="btn btn-primary" onclick="showAddCardModal()">+ Добавить карту</button>
+                        <p class="stats-text" id="cards-detail-text">Зарегистрировано карт: <span id="cards-count-detail">0</span></p>
+                        <button class="btn btn-primary" id="add-card-btn" onclick="showAddCardModal()">+ Добавить карту</button>
                     </div>
                     
                     <div id="user-cards-list" class="cards-list">
@@ -85,8 +109,8 @@
                     
                     <div id="empty-cards" class="empty-state" style="display: none;">
                         <div class="empty-icon">💳</div>
-                        <h3>У вас пока нет карт</h3>
-                        <p>Добавьте свои банковские карты, чтобы получать персональные рекомендации</p>
+                        <h3 id="no-cards-title">У вас пока нет карт</h3>
+                        <p id="no-cards-subtitle">Добавьте свои банковские карты, чтобы получать персональные рекомендации</p>
                     </div>
                     
                     <div id="my-cards-banner">
@@ -99,14 +123,14 @@
         <!-- Add Card Modal -->
         <div id="add-card-modal" class="modal">
             <div class="modal-content">
-                <h3>Добавить карту</h3>
+                <h3 id="modal-title">Добавить карту</h3>
                 <select id="bank-select" style="width: 100%; padding: 15px; border: 1px solid #F8F9FA; border-radius: 8px; font-size: 16px; margin-bottom: 20px; transition: all 0.2s ease; color: #212529;">
-                    <option value="">Выберите банк</option>
+                    <option value="" id="select-bank-option">Выберите банк</option>
                 </select>
                 <input type="text" id="card-name" placeholder="Название карты (например, СберКарта)" style="display: none;">
                 <div class="modal-buttons">
-                    <button class="btn btn-secondary" onclick="hideAddCardModal()">Отмена</button>
-                    <button class="btn btn-primary" onclick="addCard()">Добавить</button>
+                    <button class="btn btn-secondary" id="cancel-btn" onclick="hideAddCardModal()">Отмена</button>
+                    <button class="btn btn-primary" id="add-btn" onclick="addCard()">Добавить</button>
                 </div>
             </div>
         </div>
@@ -114,7 +138,7 @@
         <!-- Loading -->
         <div id="loading" class="loading" style="display: none;">
             <div class="spinner"></div>
-            <p>Загружаем данные...</p>
+            <p id="loading-text">Загружаем данные...</p>
         </div>
     </div>
 

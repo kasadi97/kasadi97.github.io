@@ -53,7 +53,8 @@ const TRANSLATIONS = {
     // Referral Banner
     getReferralCard: "Получите карту Freedom Bank",
     bonusOnRegistration: "бонуса при регистрации",
-    additionalBonus: "дополнительных бонусов",
+    additionalBonus: "до",
+    bonusesWord: "бонусов",
     promoCode: "Промокод:",
     getCard: "Получить карту",
     
@@ -62,7 +63,11 @@ const TRANSLATIONS = {
     cardDeleted: "Карта удалена",
     selectBankFirst: "Выберите банк",
     confirmDelete: "Вы уверены, что хотите удалить эту карту?",
-    cardAlreadyExists: "Такая карта уже добавлена"
+    cardAlreadyExists: "Такая карта уже добавлена",
+    
+    // Loading and UI
+    loadingText: "Загружаем данные...",
+    selectBankPlaceholder: "Выберите банк"
   },
   
   kz: {
@@ -118,7 +123,8 @@ const TRANSLATIONS = {
     // Referral Banner
     getReferralCard: "Freedom Bank картасын алыңыз",
     bonusOnRegistration: "тіркелу кезінде бонус",
-    additionalBonus: "қосымша бонус",
+    additionalBonus: "дейін",
+    bonusesWord: "бонус",
     promoCode: "Промокод:",
     getCard: "Карта алу",
     
@@ -127,7 +133,11 @@ const TRANSLATIONS = {
     cardDeleted: "Карта жойылды",
     selectBankFirst: "Банкті таңдаңыз",
     confirmDelete: "Осы картаны жойғыңыз келе ме?",
-    cardAlreadyExists: "Мұндай карта қосылған"
+    cardAlreadyExists: "Мұндай карта қосылған",
+    
+    // Loading and UI
+    loadingText: "Деректер жүктелуде...",
+    selectBankPlaceholder: "Банкті таңдаңыз"
   },
   
   en: {
@@ -183,7 +193,8 @@ const TRANSLATIONS = {
     // Referral Banner
     getReferralCard: "Get Freedom Bank Card",
     bonusOnRegistration: "bonus on registration",
-    additionalBonus: "additional bonus",
+    additionalBonus: "up to",
+    bonusesWord: "bonuses",
     promoCode: "Promo code:",
     getCard: "Get Card",
     
@@ -192,7 +203,11 @@ const TRANSLATIONS = {
     cardDeleted: "Card deleted",
     selectBankFirst: "Select bank first",
     confirmDelete: "Are you sure you want to delete this card?",
-    cardAlreadyExists: "This card is already added"
+    cardAlreadyExists: "This card is already added",
+    
+    // Loading and UI
+    loadingText: "Loading data...",
+    selectBankPlaceholder: "Select bank"
   }
 };
 

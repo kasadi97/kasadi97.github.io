@@ -69,7 +69,7 @@ class App {
     
     // Обновляем заголовок
     document.getElementById('category-icon').textContent = category.icon;
-    document.getElementById('category-title').textContent = category.name;
+    document.getElementById('category-title').textContent = TranslationService.translate(category.id);
     
     // Рендерим контент
     this.renderCategoryContent(category);
@@ -89,14 +89,14 @@ class App {
     if (bestUserCard) {
       html += this.renderCardSection(
         bestUserCard,
-        '🎯 Лучшая из ваших карт',
-        'Используйте эту карту для максимального кэшбэка'
+        TranslationService.translate('bestUserCard'),
+        TranslationService.translate('bestUserCardSubtitle')
       );
     } else {
       html += `
         <div class="no-user-cards">
-          <h3>У вас нет карт в этой категории</h3>
-          <p>Добавьте карты в "Мои карты", чтобы получать персональные рекомендации</p>
+          <h3>${TranslationService.translate('noCardsInCategory')}</h3>
+          <p>${TranslationService.translate('noCardsInCategorySubtitle')}</p>
         </div>
       `;
     }
@@ -105,15 +105,15 @@ class App {
     if (bestCard) {
       html += this.renderCardSection(
         bestCard,
-        '🏆 Лучшая карта на рынке',
-        'Максимальный кэшбэк в этой категории'
+        TranslationService.translate('bestMarketCard'),
+        TranslationService.translate('bestMarketCardSubtitle')
       );
     }
 
     // Все карты категории
     html += `
       <div class="card-container">
-        <h3 class="section-title">Все карты в категории</h3>
+        <h3 class="section-title">${TranslationService.translate('allCards')}</h3>
         ${category.cards.map(card => {
           const serviceName = card.description.split(' - ')[0];
           const displayTitle = `${serviceName} (${card.bankName})`;
@@ -170,14 +170,14 @@ class App {
                        align-items:center; justify-content:center; font-weight:bold; color:#FF6B35;">F</div>
           </div>
           <div class="referral-text">
-            <h3>Получите карту Freedom Bank</h3>
-            <p>🎁 <strong>1000₸</strong> бонуса при регистрации<br>
-            💰 От <strong>1500₸</strong> дополнительных бонусов</p>
-            <p class="promo-code">Промокод: <strong>F5CFZKVZ</strong></p>
+            <h3>${TranslationService.translate('getReferralCard')}</h3>
+            <p>🎁 <strong>1000₸</strong> ${TranslationService.translate('bonusOnRegistration')}<br>
+            💰 ${TranslationService.translate('additionalBonus')} <strong>1500₸</strong> ${TranslationService.translate('bonusesWord')}</p>
+            <p class="promo-code">${TranslationService.translate('promoCode')} <strong>F5CFZKVZ</strong></p>
           </div>
           <div class="referral-action">
             <button class="referral-btn" onclick="window.open('https://freedombank.onelink.me/WNLd/biapz2um', '_blank')">
-              Получить карту
+              ${TranslationService.translate('getCard')}
             </button>
           </div>
         </div>
@@ -342,16 +342,54 @@ class App {
     });
     document.querySelector(`[data-lang="${TranslationService.currentLanguage}"]`).classList.add('active');
     
-    // Обновляем основные элементы интерфейса
+    // Обновляем заголовки и подзаголовки
+    document.querySelector('.app-title').textContent = TranslationService.translate('appTitle');
     document.querySelector('.app-subtitle').textContent = TranslationService.translate('appSubtitle');
     
     // Обновляем статистику
-    const statsText = document.querySelector('.stats-text');
-    const cardsCount = document.getElementById('cards-count').textContent;
-    statsText.innerHTML = `${TranslationService.translate('cardsRegistered')} <span id="cards-count">${cardsCount}</span> ${TranslationService.translate('cardsCount')}`;
+    const statsText = document.getElementById('stats-text');
+    if (statsText) {
+      const count = document.getElementById('cards-count')?.textContent || '0';
+      statsText.innerHTML = `${TranslationService.translate('cardsRegistered')} <span id="cards-count">${count}</span> ${TranslationService.translate('cardsCount')}`;
+    }
+    
+    // Обновляем кнопки "Назад"
+    document.querySelectorAll('[id^="back-btn"]').forEach(btn => {
+      btn.textContent = TranslationService.translate('backButton');
+    });
+    
+    // Обновляем заголовок "Мои карты"
+    const myCardsTitle = document.getElementById('my-cards-title');
+    if (myCardsTitle) myCardsTitle.textContent = TranslationService.translate('myCards');
+    
+    // Обновляем кнопку добавления карты
+    const addCardBtn = document.getElementById('add-card-btn');
+    if (addCardBtn) addCardBtn.textContent = TranslationService.translate('addCard');
+    
+    // Обновляем пустое состояние карт
+    const noCardsTitle = document.getElementById('no-cards-title');
+    const noCardsSubtitle = document.getElementById('no-cards-subtitle');
+    if (noCardsTitle) noCardsTitle.textContent = TranslationService.translate('noCardsYet');
+    if (noCardsSubtitle) noCardsSubtitle.textContent = TranslationService.translate('noCardsYetSubtitle');
+    
+    // Обновляем модальное окно
+    const modalTitle = document.getElementById('modal-title');
+    const selectBankOption = document.getElementById('select-bank-option');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const addBtn = document.getElementById('add-btn');
+    
+    if (modalTitle) modalTitle.textContent = TranslationService.translate('addCardTitle');
+    if (selectBankOption) selectBankOption.textContent = TranslationService.translate('selectBankPlaceholder');
+    if (cancelBtn) cancelBtn.textContent = TranslationService.translate('cancel');
+    if (addBtn) addBtn.textContent = TranslationService.translate('add');
+    
+    // Обновляем текст загрузки
+    const loadingText = document.getElementById('loading-text');
+    if (loadingText) loadingText.textContent = TranslationService.translate('loadingText');
     
     // Обновляем кнопку управления картами
-    document.querySelector('.stats-container .btn').textContent = TranslationService.translate('manageCards');
+    const manageBtns = document.getElementById('manage-cards-btn');
+    if (manageBtns) manageBtns.textContent = TranslationService.translate('manageCards');
   }
 
   showHome() {
