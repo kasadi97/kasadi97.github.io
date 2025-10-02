@@ -118,5 +118,8 @@ tools/
 !widget-data.json
 !pwabuilder-config.json
 !pwabuilder-sw.js
+!assetlinks.json
+!ASSETLINKS.md
 *.md
 !README.md
+!ASSETLINKS.md

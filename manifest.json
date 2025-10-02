@@ -85,7 +85,9 @@
     "status_bar_color": "#3B82F6",
     "navigation_bar_color": "#FFFFFF",
     "navigation_bar_divider_color": "#F8F9FA",
-    "background_color": "#FFFFFF"
+    "background_color": "#FFFFFF",
+    "host": "kasadi97.github.io",
+    "packageName": "kz.cardadvisor.pwa"
   },
   "widgets": [
     {

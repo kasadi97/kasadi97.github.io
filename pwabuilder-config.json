@@ -24,6 +24,13 @@
     "display": "standalone",
     "fullscreen": false,
     "hideAddressBar": true,
-    "hideNavigationBar": false
+    "hideNavigationBar": false,
+    "host": "kasadi97.github.io",
+    "hostUrl": "https://kasadi97.github.io/card-advisor-kz-pwa/",
+    "assetLinksUrl": "https://kasadi97.github.io/card-advisor-kz-pwa/.well-known/assetlinks.json",
+    "signingKey": {
+      "file": "android-key.keystore",
+      "alias": "cardadvisor-key"
+    }
   }
 }
