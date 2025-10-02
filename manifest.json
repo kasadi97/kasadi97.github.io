@@ -3,12 +3,12 @@
   "name": "Card Advisor KZ - Лучшие банковские карты Казахстана",
   "short_name": "Card Advisor KZ",
   "description": "PWA приложение для выбора лучших банковских карт по категориям трат. 75+ карт от 9 банков Казахстана с персональными рекомендациями.",
-  "start_url": "https://kasadi97.github.io/card-advisor-kz-pwa/",
+  "start_url": "/card-advisor-kz-pwa/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#3B82F6",
   "orientation": "portrait-primary",
-  "scope": "https://kasadi97.github.io/card-advisor-kz-pwa/",
+  "scope": "/card-advisor-kz-pwa/",
   "lang": "ru",
   "dir": "ltr",
   "prefer_related_applications": true,
@@ -46,7 +46,7 @@
     "client_mode": "focus-existing"
   },
   "share_target": {
-    "action": "https://kasadi97.github.io/card-advisor-kz-pwa/share-target/",
+    "action": "/card-advisor-kz-pwa/share-target/",
     "method": "POST",
     "params": {
       "title": "title",
@@ -56,14 +56,14 @@
   },
   "file_handlers": [
     {
-      "action": "https://kasadi97.github.io/card-advisor-kz-pwa/open-csv",
+      "action": "/card-advisor-kz-pwa/open-csv",
       "accept": {
         "text/csv": [".csv"],
         "application/json": [".json"]
       },
       "icons": [
         {
-          "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-192x192.png",
+          "src": "/card-advisor-kz-pwa/icons/icon-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
@@ -73,7 +73,7 @@
   "protocol_handlers": [
     {
       "protocol": "web+cardadvisor",
-      "url": "https://kasadi97.github.io/card-advisor-kz-pwa/?action=%s"
+      "url": "/card-advisor-kz-pwa/?action=%s"
     }
   ],
   "edge_side_panel": {
@@ -100,14 +100,14 @@
       "type": "text/plain",
       "screenshots": [
         {
-          "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/screenshot-narrow.svg",
+          "src": "/card-advisor-kz-pwa/icons/screenshot-narrow.svg",
           "sizes": "390x844",
           "label": "Виджет моих карт"
         }
       ],
       "icons": [
         {
-          "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-192x192.png",
+          "src": "/card-advisor-kz-pwa/icons/icon-192x192.png",
           "sizes": "192x192"
         }
       ]
@@ -115,25 +115,25 @@
   ],
   "icons": [
     {
-      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-32x32.png",
+      "src": "/card-advisor-kz-pwa/icons/icon-32x32.png",
       "sizes": "32x32",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-192x192.png",
+      "src": "/card-advisor-kz-pwa/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-512x512.png",
+      "src": "/card-advisor-kz-pwa/icons/icon-512x512.png",
       "sizes": "512x512", 
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-512x512.png",
+      "src": "/card-advisor-kz-pwa/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png", 
       "purpose": "maskable"
@@ -146,10 +146,10 @@
       "name": "Мои карты",
       "short_name": "Карты",
       "description": "Управление вашими банковскими картами",
-      "url": "https://kasadi97.github.io/card-advisor-kz-pwa/?screen=cards",
+      "url": "/card-advisor-kz-pwa/?screen=cards",
       "icons": [
         {
-          "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-192x192.png",
+          "src": "/card-advisor-kz-pwa/icons/icon-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
@@ -159,10 +159,10 @@
       "name": "Лучшие карты",
       "short_name": "Топ карты",
       "description": "Просмотр лучших предложений",
-      "url": "https://kasadi97.github.io/card-advisor-kz-pwa/?category=groceries",
+      "url": "/card-advisor-kz-pwa/?category=groceries",
       "icons": [
         {
-          "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/icon-192x192.png", 
+          "src": "/card-advisor-kz-pwa/icons/icon-192x192.png", 
           "sizes": "192x192",
           "type": "image/png"
         }
@@ -171,14 +171,14 @@
   ],
   "screenshots": [
     {
-      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/screenshot-narrow.svg",
+      "src": "/card-advisor-kz-pwa/icons/screenshot-narrow.svg",
       "sizes": "390x844",
       "type": "image/svg+xml",
       "form_factor": "narrow",
       "label": "Главная страница с категориями банковских карт"
     },
     {
-      "src": "https://kasadi97.github.io/card-advisor-kz-pwa/icons/screenshot-wide.svg", 
+      "src": "/card-advisor-kz-pwa/icons/screenshot-wide.svg", 
       "sizes": "1024x768",
       "type": "image/svg+xml",
       "form_factor": "wide",
