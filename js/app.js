@@ -4,6 +4,7 @@ class App {
     this.currentScreen = 'home';
     this.currentCategory = null;
     this.userCards = [];
+    this.categories = []; // Сохраняем загруженные категории
     this.init();
   }
 
@@ -41,6 +42,7 @@ class App {
     try {
       this.showLoading();
       const categories = await DataService.fetchCategories();
+      this.categories = categories; // Сохраняем категории
       this.renderCategories(categories);
     } catch (error) {
       console.error('Ошибка загрузки категорий:', error);
@@ -312,7 +314,12 @@ class App {
     } else if (this.currentScreen === 'category' && this.currentCategory) {
       this.renderCategoryContent(this.currentCategory);
     } else {
-      this.loadCategories();
+      // Быстрый рендер главной без задержки
+      if (this.categories.length > 0) {
+        this.renderCategories(this.categories);
+      } else {
+        this.loadCategories();
+      }
       this.loadHomeBanner();
     }
   }
