@@ -107,3 +107,12 @@ Desktop.ini
 .Spotlight-V100
 .Trashes
 Icon?
+
+# APK и инструменты (не нужны в репозитории)
+*.apk
+*.idsig
+tools/
+*.bat
+*.py
+*.md
+!README.md
