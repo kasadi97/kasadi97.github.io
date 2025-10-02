@@ -4,7 +4,7 @@
   "short_name": "Card Advisor KZ",
   "description": "PWA приложение для выбора лучших банковских карт по категориям трат. 75+ карт от 9 банков Казахстана с персональными рекомендациями.",
   "start_url": "https://kasadi97.github.io/card-advisor-kz-pwa/",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#3B82F6",
   "orientation": "portrait-primary",
@@ -12,7 +12,7 @@
   "lang": "ru",
   "dir": "ltr",
   "prefer_related_applications": true,
-  "display_override": ["fullscreen", "standalone", "minimal-ui"],
+  "display_override": ["standalone"],
   "related_applications": [
     {
       "platform": "play",
@@ -78,6 +78,14 @@
   ],
   "edge_side_panel": {
     "preferred_width": 400
+  },
+  "android": {
+    "display": "standalone",
+    "orientation": "portrait",
+    "status_bar_color": "#3B82F6",
+    "navigation_bar_color": "#FFFFFF",
+    "navigation_bar_divider_color": "#F8F9FA",
+    "background_color": "#FFFFFF"
   },
   "widgets": [
     {

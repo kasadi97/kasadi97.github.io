@@ -116,5 +116,7 @@ tools/
 *.py
 !adaptive-card.json
 !widget-data.json
+!pwabuilder-config.json
+!pwabuilder-sw.js
 *.md
 !README.md

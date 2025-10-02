@@ -6,6 +6,45 @@ class App {
     this.userCards = [];
     this.categories = []; // Сохраняем загруженные категории
     this.init();
+    this.setupFullscreenMode();
+  }
+
+  setupFullscreenMode() {
+    // Скрываем адресную строку в PWA
+    window.addEventListener('load', () => {
+      // Принудительно скрываем адресную строку
+      setTimeout(() => {
+        window.scrollTo(0, 1);
+      }, 100);
+      
+      // Для старых Android браузеров
+      if (window.navigator && window.navigator.standalone === false) {
+        setTimeout(() => {
+          window.scrollTo(0, 1);
+        }, 1000);
+      }
+    });
+
+    // Предотвращаем показ адресной строки
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset === 0) {
+        setTimeout(() => {
+          window.scrollTo(0, 1);
+        }, 50);
+      }
+    });
+
+    // Отключаем контекстное меню
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      return false;
+    });
+
+    // Отключаем выделение текста
+    document.addEventListener('selectstart', (e) => {
+      e.preventDefault();
+      return false;
+    });
   }
 
   async init() {
