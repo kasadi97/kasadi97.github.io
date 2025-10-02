@@ -1,0 +1,31 @@
+{
+  "name": "card-advisor-kz",
+  "version": "1.0.0",
+  "description": "Card Advisor KZ - PWA приложение для выбора банковских карт",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python server.py",
+    "build": "echo 'Static files ready'",
+    "capacitor:init": "npx cap init",
+    "capacitor:add": "npx cap add android",
+    "capacitor:sync": "npx cap sync",
+    "capacitor:build": "npm run build && npx cap copy && npx cap open android",
+    "install-capacitor": "npm install @capacitor/core @capacitor/cli @capacitor/android"
+  },
+  "keywords": [
+    "pwa",
+    "kazakhstan",
+    "banking",
+    "cards",
+    "cashback"
+  ],
+  "author": "Card Advisor KZ",
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/cli": "^5.0.0"
+  },
+  "dependencies": {
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/core": "^5.0.0"
+  }
+}
