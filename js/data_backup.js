@@ -10,7 +10,7 @@ const CATEGORIES_DATA = [
         cardName: "Freedom Card",
         cashbackPercent: 29,
         description: "Arbuz - до 29% кэшбек",
-        referralLink: "https://freedom.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#FF6B35"
       },
       {
@@ -18,7 +18,7 @@ const CATEGORIES_DATA = [
         cardName: "Freedom Card",
         cashbackPercent: 17,
         description: "Choco - до 17% кэшбек",
-        referralLink: "https://freedom.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#FF6B35"
       },
       {
@@ -26,7 +26,7 @@ const CATEGORIES_DATA = [
         cardName: "Halyk Card",
         cashbackPercent: 10,
         description: "Гипермаркеты METRO - 10% кэшбек",
-        referralLink: "https://halykbank.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#1E88E5"
       },
       {
@@ -34,7 +34,7 @@ const CATEGORIES_DATA = [
         cardName: "БЦК Card",
         cashbackPercent: 8,
         description: "Small & Spar - 8% кэшбек (индивидуально)",
-        referralLink: "https://bcc.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#4CAF50"
       },
       {
@@ -42,7 +42,7 @@ const CATEGORIES_DATA = [
         cardName: "Freedom Card (универсальная)",
         cashbackPercent: 7,
         description: "Повышенный кэшбек почти везде - до 7%",
-        referralLink: "https://freedom.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#FF6B35"
       },
       {
@@ -50,7 +50,7 @@ const CATEGORIES_DATA = [
         cardName: "Яндекс Плюс Forte",
         cashbackPercent: 5,
         description: "Яндекс Go (раздел Еда) - до 5%",
-        referralLink: "https://forte.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#9C27B0"
       },
       {
@@ -58,7 +58,7 @@ const CATEGORIES_DATA = [
         cardName: "Forte Card",
         cashbackPercent: 5,
         description: "Кафе и рестораны - 5% кэшбек",
-        referralLink: "https://forte.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#9C27B0"
       }
     ]
@@ -73,7 +73,7 @@ const CATEGORIES_DATA = [
         cardName: "Автокарта",
         cashbackPercent: 10,
         description: "АЗС - до 10% кэшбек",
-        referralLink: "https://eubank.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#E53935"
       },
       {
@@ -81,7 +81,7 @@ const CATEGORIES_DATA = [
         cardName: "Bereke Card",
         cashbackPercent: 10,
         description: "АЗС - 10% кэшбек",
-        referralLink: "https://berekebank.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#FFC107"
       },
       {
@@ -89,7 +89,7 @@ const CATEGORIES_DATA = [
         cardName: "Яндекс Плюс Forte",
         cashbackPercent: 8,
         description: "АЗС - до 8% кэшбек",
-        referralLink: "https://forte.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#9C27B0"
       },
       {
@@ -97,7 +97,7 @@ const CATEGORIES_DATA = [
         cardName: "Forte Card",
         cashbackPercent: 3,
         description: "АЗС - до 3% кэшбек",
-        referralLink: "https://forte.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#9C27B0"
       }
     ]
@@ -112,7 +112,7 @@ const CATEGORIES_DATA = [
         cardName: "RBK Card",
         cashbackPercent: 25,
         description: "Рестораны ABR и приложение abr+ - до 25%",
-        referralLink: "https://rbk.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#795548"
       },
       {
@@ -120,7 +120,7 @@ const CATEGORIES_DATA = [
         cardName: "Freedom Card",
         cashbackPercent: 17,
         description: "Choco - до 17% кэшбек",
-        referralLink: "https://freedom.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#FF6B35"
       },
       {
@@ -128,7 +128,7 @@ const CATEGORIES_DATA = [
         cardName: "Яндекс Плюс Forte",
         cashbackPercent: 5,
         description: "Яндекс Go (раздел Еда) - до 5%",
-        referralLink: "https://forte.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#9C27B0"
       },
       {
@@ -136,7 +136,7 @@ const CATEGORIES_DATA = [
         cardName: "Forte Card",
         cashbackPercent: 5,
         description: "Кафе и рестораны - 5% кэшбек",
-        referralLink: "https://forte.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#9C27B0"
       }
     ]
@@ -151,7 +151,7 @@ const CATEGORIES_DATA = [
         cardName: "Тариф Семейный",
         cashbackPercent: 100,
         description: "Onay, Avtobys, Tulpar card и CTS - 100% при оплате с баланса",
-        referralLink: "https://activ.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#00BCD4"
       },
       {
@@ -159,7 +159,7 @@ const CATEGORIES_DATA = [
         cardName: "Freedom Card",
         cashbackPercent: 100,
         description: "QazAvtoJol (платные дороги) - 100% возврат",
-        referralLink: "https://freedom.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#FF6B35"
       },
       {
@@ -167,7 +167,7 @@ const CATEGORIES_DATA = [
         cardName: "Яндекс Плюс Forte",
         cashbackPercent: 20,
         description: "Такси - до 20% кэшбек",
-        referralLink: "https://forte.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#9C27B0"
       },
       {
@@ -175,7 +175,7 @@ const CATEGORIES_DATA = [
         cardName: "Freedom Card",
         cashbackPercent: 17,
         description: "Авиа и ж/д билеты в приложении Freedom - до 17%",
-        referralLink: "https://freedom.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#FF6B35"
       },
       {
@@ -183,7 +183,7 @@ const CATEGORIES_DATA = [
         cardName: "Bereke Card",
         cashbackPercent: 10,
         description: "Такси - 10% кэшбек",
-        referralLink: "https://berekebank.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#FFC107"
       },
       {
@@ -191,7 +191,7 @@ const CATEGORIES_DATA = [
         cardName: "Forte Card",
         cashbackPercent: 10,
         description: "Такси - 10% кэшбек",
-        referralLink: "https://forte.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#9C27B0"
       },
       {
@@ -199,7 +199,7 @@ const CATEGORIES_DATA = [
         cardName: "Alatau Card",
         cashbackPercent: 7,
         description: "Такси - 7% кэшбек",
-        referralLink: "https://alataubank.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#607D8B"
       },
       {
@@ -207,7 +207,7 @@ const CATEGORIES_DATA = [
         cardName: "Автокарта",
         cashbackPercent: 5,
         description: "Такси - 5% кэшбек",
-        referralLink: "https://eubank.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#E53935"
       },
       {
@@ -215,7 +215,7 @@ const CATEGORIES_DATA = [
         cardName: "БЦК Card",
         cashbackPercent: 4,
         description: "Такси - 4% кэшбек (индивидуально)",
-        referralLink: "https://bcc.kz",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#4CAF50"
       }
     ]
@@ -230,7 +230,7 @@ const CATEGORIES_DATA = [
         cardName: "Black",
         cashbackPercent: 1,
         description: "1% кэшбэка на все покупки",
-        referralLink: "https://tinkoff.ru/cards/tcs-black",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#FFDD2D"
       },
       {
@@ -238,7 +238,7 @@ const CATEGORIES_DATA = [
         cardName: "СберКарта+",
         cashbackPercent: 1,
         description: "1% кэшбэка онлайн",
-        referralLink: "https://sberbank.ru/cards/",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#21A038"
       }
     ]
@@ -253,7 +253,7 @@ const CATEGORIES_DATA = [
         cardName: "Мультикарта",
         cashbackPercent: 3,
         description: "3% кэшбэка на ЖКХ",
-        referralLink: "https://vtb.ru/personal/karty/",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#0267C1"
       },
       {
@@ -261,7 +261,7 @@ const CATEGORIES_DATA = [
         cardName: "Элемент",
         cashbackPercent: 2,
         description: "2% кэшбэка на коммунальные",
-        referralLink: "https://pochtabank.ru/",
+        referralLink: "https://freedombank.onelink.me/WNLd/biapz2um",
         color: "#1E5FBA"
       }
     ]
