@@ -3,6 +3,6 @@
       "target": {
         "namespace": "android_app",
         "package_name": "io.github.kasadi97.twa",
-        "sha256_cert_fingerprints": ["18:A6:53:E8:43:5C:44:A9:E3:0F:5A:2A:6B:9C:5D:DD:18:A5:41:1D:42:30:13:0E:21:0B:18:63:B0:13:7E:8C"]
+        "sha256_cert_fingerprints": ["D5:BF:0F:A9:DE:77:08:71:A7:C6:D8:3D:3C:FC:2E:D5:6B:1D:A8:3B:22:E4:8A:98:5C:68:9E:6C:04:A0:4D:F9"]
       }
     }]
