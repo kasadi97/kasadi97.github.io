@@ -12,7 +12,7 @@
   "lang": "ru",
   "dir": "ltr",
   "prefer_related_applications": true,
-  "display_override": ["standalone"],
+  "display_override": ["window-controls-overlay", "standalone"],
   "related_applications": [
     {
       "platform": "play",
