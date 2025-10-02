@@ -1,7 +1,8 @@
 {
-  "name": "Card Advisor - Лучшие банковские карты",
-  "short_name": "Card Advisor",
-  "description": "Выбирайте лучшие банковские карты для каждой категории покупок",
+  "id": "kz.cardadvisor.pwa",
+  "name": "Card Advisor KZ - Лучшие банковские карты Казахстана",
+  "short_name": "Card Advisor KZ",
+  "description": "PWA приложение для выбора лучших банковских карт по категориям трат. 75+ карт от 9 банков Казахстана с персональными рекомендациями.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
@@ -9,29 +10,44 @@
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "ru",
+  "dir": "ltr",
   "prefer_related_applications": false,
   "display_override": ["window-controls-overlay", "minimal-ui"],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=kz.cardadvisor.pwa",
+      "id": "kz.cardadvisor.pwa"
+    }
+  ],
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='50' fill='%233B82F6'/><rect x='80' y='180' width='352' height='220' rx='20' fill='white'/><rect x='100' y='200' width='312' height='40' rx='10' fill='%233B82F6'/><circle cx='140' cy='300' r='15' fill='%233B82F6'/><rect x='180' y='285' width='100' height='30' rx='5' fill='%23F8F9FA'/><rect x='300' y='285' width='80' height='30' rx='5' fill='%23F8F9FA'/><text x='256' y='130' font-size='60' text-anchor='middle' fill='white' font-family='Arial'>💳</text></svg>",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
+      "src": "icons/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='50' fill='%233B82F6'/><rect x='80' y='180' width='352' height='220' rx='20' fill='white'/><rect x='100' y='200' width='312' height='40' rx='10' fill='%233B82F6'/><circle cx='140' cy='300' r='15' fill='%233B82F6'/><rect x='180' y='285' width='100' height='30' rx='5' fill='%23F8F9FA'/><rect x='300' y='285' width='80' height='30' rx='5' fill='%23F8F9FA'/><text x='256' y='130' font-size='60' text-anchor='middle' fill='white' font-family='Arial'>💳</text></svg>",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
-    },
-    {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='20' fill='%233B82F6'/><rect x='30' y='68' width='132' height='82' rx='8' fill='white'/><rect x='38' y='76' width='116' height='15' rx='4' fill='%233B82F6'/><circle cx='52' cy='112' r='6' fill='%233B82F6'/><rect x='68' y='106' width='37' height='11' rx='2' fill='%23F8F9FA'/><rect x='112' y='106' width='30' height='11' rx='2' fill='%23F8F9FA'/><text x='96' y='50' font-size='22' text-anchor='middle' fill='white' font-family='Arial'>💳</text></svg>",
+      "src": "icons/icon-192x192.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ],
   "categories": ["finance", "utilities", "productivity", "shopping"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
   "shortcuts": [
     {
       "name": "Мои карты",
@@ -40,8 +56,21 @@
       "url": "/?screen=cards",
       "icons": [
         {
-          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' rx='10' fill='%2310B981'/><text x='48' y='65' font-size='30' text-anchor='middle' fill='white' font-family='Arial'>💳</text></svg>",
-          "sizes": "96x96",
+          "src": "icons/icon-192x192.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Лучшие карты",
+      "short_name": "Топ карты",
+      "description": "Просмотр лучших предложений",
+      "url": "/?category=groceries",
+      "icons": [
+        {
+          "src": "icons/icon-192x192.svg", 
+          "sizes": "192x192",
           "type": "image/svg+xml"
         }
       ]
@@ -49,11 +78,18 @@
   ],
   "screenshots": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 390 844'><rect width='390' height='844' fill='%23FFFFFF'/><rect x='20' y='60' width='350' height='100' rx='12' fill='%23FFFFFF' stroke='%23F8F9FA'/><text x='195' y='120' font-size='24' text-anchor='middle' font-family='Arial' fill='%233B82F6' font-weight='bold'>🏦 Card Advisor</text><text x='195' y='150' font-size='16' text-anchor='middle' font-family='Arial' fill='%236C757D'>Выберите категорию покупки</text><rect x='30' y='200' width='150' height='120' rx='12' fill='%23FFFFFF' stroke='%23F8F9FA'/><text x='105' y='240' font-size='36' text-anchor='middle'>🛒</text><text x='105' y='280' font-size='14' text-anchor='middle' font-family='Arial' fill='%23212529' font-weight='600'>Супермаркеты</text><rect x='210' y='200' width='150' height='120' rx='12' fill='%23FFFFFF' stroke='%23F8F9FA'/><text x='285' y='240' font-size='36' text-anchor='middle'>⛽</text><text x='285' y='280' font-size='14' text-anchor='middle' font-family='Arial' fill='%23212529' font-weight='600'>Заправки</text></svg>",
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 390 844'><rect width='390' height='844' fill='%23FFFFFF'/><rect x='0' y='0' width='390' height='120' fill='%23FFFFFF' stroke='%23F8F9FA'/><text x='195' y='50' font-size='24' text-anchor='middle' font-family='Arial' fill='%233B82F6' font-weight='bold'>💳 Card Advisor KZ</text><text x='195' y='80' font-size='16' text-anchor='middle' font-family='Arial' fill='%236C757D'>Лучшие банковские карты Казахстана</text><rect x='20' y='140' width='350' height='60' rx='12' fill='%23F8F9FA'/><text x='195' y='165' font-size='16' text-anchor='middle' font-family='Arial' fill='%23212529'>У вас зарегистрировано: 3 карты</text><rect x='30' y='220' width='150' height='120' rx='12' fill='%23FFFFFF' stroke='%23E9ECEF'/><text x='105' y='260' font-size='36' text-anchor='middle'>🛒</text><text x='105' y='290' font-size='14' text-anchor='middle' font-family='Arial' fill='%23212529' font-weight='600'>Продукты</text><text x='105' y='310' font-size='12' text-anchor='middle' font-family='Arial' fill='%236C757D'>8 карт</text><rect x='210' y='220' width='150' height='120' rx='12' fill='%23FFFFFF' stroke='%23E9ECEF'/><text x='285' y='260' font-size='36' text-anchor='middle'>⛽</text><text x='285' y='290' font-size='14' text-anchor='middle' font-family='Arial' fill='%23212529' font-weight='600'>АЗС</text><text x='285' y='310' font-size='12' text-anchor='middle' font-family='Arial' fill='%236C757D'>6 карт</text><rect x='30' y='360' width='150' height='120' rx='12' fill='%23FFFFFF' stroke='%23E9ECEF'/><text x='105' y='400' font-size='36' text-anchor='middle'>🍽️</text><text x='105' y='430' font-size='14' text-anchor='middle' font-family='Arial' fill='%23212529' font-weight='600'>Рестораны</text><text x='105' y='450' font-size='12' text-anchor='middle' font-family='Arial' fill='%236C757D'>7 карт</text><rect x='210' y='360' width='150' height='120' rx='12' fill='%23FFFFFF' stroke='%23E9ECEF'/><text x='285' y='400' font-size='36' text-anchor='middle'>🚕</text><text x='285' y='430' font-size='14' text-anchor='middle' font-family='Arial' fill='%23212529' font-weight='600'>Транспорт</text><text x='285' y='450' font-size='12' text-anchor='middle' font-family='Arial' fill='%236C757D'>5 карт</text></svg>",
       "sizes": "390x844",
       "type": "image/svg+xml",
       "form_factor": "narrow",
-      "label": "Main screen showing categories"
+      "label": "Главная страница с категориями банковских карт"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 768'><rect width='1024' height='768' fill='%23FFFFFF'/><rect x='0' y='0' width='1024' height='100' fill='%23FFFFFF' stroke='%23F8F9FA'/><text x='512' y='45' font-size='32' text-anchor='middle' font-family='Arial' fill='%233B82F6' font-weight='bold'>💳 Card Advisor KZ</text><text x='512' y='75' font-size='18' text-anchor='middle' font-family='Arial' fill='%236C757D'>Лучшие банковские карты Казахстана</text><rect x='50' y='130' width='924' height='80' rx='12' fill='%23F8F9FA'/><text x='512' y='165' font-size='20' text-anchor='middle' font-family='Arial' fill='%23212529'>У вас зарегистрировано: 3 карты</text><rect x='70' y='240' width='200' height='160' rx='12' fill='%23FFFFFF' stroke='%23E9ECEF'/><text x='170' y='290' font-size='48' text-anchor='middle'>🛒</text><text x='170' y='330' font-size='18' text-anchor='middle' font-family='Arial' fill='%23212529' font-weight='600'>Продукты и супермаркеты</text><text x='170' y='355' font-size='14' text-anchor='middle' font-family='Arial' fill='%236C757D'>8 карт</text><rect x='290' y='240' width='200' height='160' rx='12' fill='%23FFFFFF' stroke='%23E9ECEF'/><text x='390' y='290' font-size='48' text-anchor='middle'>⛽</text><text x='390' y='330' font-size='18' text-anchor='middle' font-family='Arial' fill='%23212529' font-weight='600'>АЗС и топливо</text><text x='390' y='355' font-size='14' text-anchor='middle' font-family='Arial' fill='%236C757D'>6 карт</text><rect x='510' y='240' width='200' height='160' rx='12' fill='%23FFFFFF' stroke='%23E9ECEF'/><text x='610' y='290' font-size='48' text-anchor='middle'>🍽️</text><text x='610' y='330' font-size='18' text-anchor='middle' font-family='Arial' fill='%23212529' font-weight='600'>Кафе и рестораны</text><text x='610' y='355' font-size='14' text-anchor='middle' font-family='Arial' fill='%236C757D'>7 карт</text><rect x='730' y='240' width='200' height='160' rx='12' fill='%23FFFFFF' stroke='%23E9ECEF'/><text x='830' y='290' font-size='48' text-anchor='middle'>🚕</text><text x='830' y='330' font-size='18' text-anchor='middle' font-family='Arial' fill='%23212529' font-weight='600'>Такси и транспорт</text><text x='830' y='355' font-size='14' text-anchor='middle' font-family='Arial' fill='%236C757D'>5 карт</text></svg>",
+      "sizes": "1024x768",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "Широкий экран с категориями карт для планшетов"
     }
   ]
 }
