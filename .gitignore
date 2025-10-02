@@ -120,6 +120,7 @@ tools/
 !pwabuilder-sw.js
 !assetlinks.json
 !ASSETLINKS.md
+!_config.yml
 *.md
 !README.md
 !ASSETLINKS.md

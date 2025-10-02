@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.kasadi97.twa",
+        "sha256_cert_fingerprints": ["18:A6:53:E8:43:5C:44:A9:E3:0F:5A:2A:6B:9C:5D:DD:18:A5:41:1D:42:30:13:0E:21:0B:18:63:B0:13:7E:8C"]
+      }
+    }]
