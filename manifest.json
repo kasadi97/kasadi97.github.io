@@ -86,7 +86,6 @@
     "navigation_bar_color": "#FFFFFF",
     "navigation_bar_divider_color": "#F8F9FA",
     "background_color": "#FFFFFF",
-    "host": "kasadi97.github.io",
     "packageName": "io.github.kasadi97.twa"
   },
   "widgets": [
