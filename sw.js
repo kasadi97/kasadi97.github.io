@@ -8,10 +8,13 @@ const urlsToCache = [
   '/js/storage.js',
   '/js/translations.js',
   '/manifest.json',
+  '/icon.svg',
   '/icons/icon-32x32.png',
-  '/icons/freedom-l.png',
-  '/icons/icon-192x192.svg',
-  '/icons/icon-512x512.svg'
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
+  '/icons/screenshot-narrow.svg',
+  '/icons/screenshot-wide.svg',
+  '/icons/freedom-l.png'
 ];
 
 // Установка Service Worker
