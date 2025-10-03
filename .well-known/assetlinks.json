@@ -1,18 +1,8 @@
-[
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "io.github.kasadi97.twa",
-      "sha256_cert_fingerprints": ["E3:DE:49:C4:64:99:D1:E7:BF:A4:38:E4:90:97:56:01:40:E0:50:53:F8:7A:8E:E0:FF:00:0A:FA:C4:83:50:F2"]
-    }
-  },
-  {
-    "relation": ["delegate_permission/common.get_login_creds"],
-    "target": {
-      "namespace": "android_app", 
-      "package_name": "io.github.kasadi97.twa",
-      "sha256_cert_fingerprints": ["E3:DE:49:C4:64:99:D1:E7:BF:A4:38:E4:90:97:56:01:40:E0:50:53:F8:7A:8E:E0:FF:00:0A:FA:C4:83:50:F2"]
-    }
-  }
-]
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.kasadi97.twa",
+        "sha256_cert_fingerprints": ["CD:7D:05:26:E1:EE:65:4A:36:AF:EB:E6:6C:8E:5B:1E:A8:C9:3C:9B:87:8E:A2:3C:E1:42:BA:CB:7C:DB:89:E2"]
+      }
+    }]
